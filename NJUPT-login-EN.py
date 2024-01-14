@@ -5,15 +5,14 @@ def info_set():
     Bid = str(input("Please input your Student ID (e.g. B20010101): "))
     server = int(input("Please input your ISP (Enter a number) [1]Campus Network [2]CMCC [3]CHINANET): "))
     while server not in [1, 2, 3]:
-        if server == 1:
-            server = None
-        elif server == 2:
-            server = "cmcc"
-        elif server == 3:
-            server = "njxy"
-        else:
-            print("Invalid input!")
-            server = int(input("Please input your ISP (Enter a number) [1]Campus Network [2]CMCC [3]CHINANET): "))
+        print("Invalid input!")
+        server = int(input("Please input your ISP (Enter a number) [1]Campus Network [2]CMCC [3]CHINANET): "))
+    if server == 1:
+        server = None
+    elif server == 2:
+        server = "cmcc"
+    elif server == 3:
+        server = "njxy"        
     password = str(input("Please input your password: "))
     config = [Bid, server, password]
     with open("config.bin", "wb") as f:

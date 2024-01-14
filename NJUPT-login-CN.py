@@ -5,15 +5,14 @@ def info_set():
     Bid = str(input("请输入您的学号（如：B20010101）："))
     server = int(input("请输入您的运营商（输入序号）[1]校园网 [2]中国移动 [3]中国电信: "))
     while server not in [1, 2, 3]:
-        if server == 1:
-            server = None
-        elif server == 2:
-            server = "cmcc"
-        elif server == 3:
-            server = "njxy"
-        else:
-            print("输入无效！")
-            server = int(input("请输入您的运营商（输入序号）[1]校园网 [2]中国移动 [3]中国电信: "))
+        print("输入无效！")
+        server = int(input("请输入您的运营商（输入序号）[1]校园网 [2]中国移动 [3]中国电信: "))
+    if server == 1:
+        server = None
+    elif server == 2:
+        server = "cmcc"
+    elif server == 3:
+        server = "njxy"
     password = str(input("请输入您的密码："))
     config = [Bid, server, password]
     with open("config.bin", "wb") as f:
