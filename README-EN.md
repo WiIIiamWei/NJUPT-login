@@ -68,3 +68,9 @@ function njupt-login {
 ```
 
 *Please choose the correct URL based on your account type (refer to the URL in the `curl` commands), the above examples are just placeholders.*
+
+## Copyright Statements
+
+The icon of the executable file uses the logo of NJUPT (only for the purpose of easy identification, please contact me if there are copyright infringements). Nanjing University of Posts of Telecommunication is the copyright holder of this logo.
+
+Everything else in this project is licensed under GNU GPLv3.
