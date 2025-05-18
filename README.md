@@ -52,8 +52,6 @@ alias njupt-login='curl --insecure "https://p.njupt.edu.cn:802/eportal/portal/lo
 
 Windows 11应该已经预装`curl`，但需要你手动指定。将上文中`curl`换为`curl.exe`即可。
 
-*请根据您的账户类型选择正确的URL（参照`curl`中的URL），以上仅为一个例子。*
-
 ## 版权声明
 
 本项目的可执行程序图标使用了南京邮电大学商标（仅为方便辨识使用，如涉及侵权请与我联系），此商标版权归南京邮电大学所有。
