@@ -36,7 +36,7 @@ curl --insecure "https://p.njupt.edu.cn:802/eportal/portal/login?&&user_account=
 
 使用时，请将`<BID>`替换为自己的学号，`<PASSWORD>`替换为自己的统一身份验证密码。
 
-**此方法不适用于Windows PowerShell中的`curl`，因为其已被alias为`Invoke-WebRequest`。若想在Windows上设置，您可使用Cygwin或Git Bash等其他shell，或者安装适用于Windows的`curl`，或参照下方方案使用`Invoke-WebRequest`。**
+**此方法不适用于Windows PowerShell中的`curl`，因为其已被alias为`Invoke-WebRequest`。若想在Windows上设置，您可使用Cygwin或Git Bash等其他shell，或者安装适用于Windows的`curl`，~~或参照下方方案使用`Invoke-WebRequest`~~。**
 
 您还可以为此命令设置alias，以便能在您的shell中使用。例如，对于bash和zsh，请分别在`.bashrc`和`.zshrc`（通常位于`~/.bashrc`或`~/.zshrc`）加入以下行：
 
@@ -48,22 +48,9 @@ alias njupt-login='curl --insecure "https://p.njupt.edu.cn:802/eportal/portal/lo
 
 ### 使用`Invoke-WebRequest`进行登录请求
 
-使用以下命令：
+此方法已经失效。请使用`curl`。
 
-```powershell
-Invoke-WebRequest -Uri "https://p.njupt.edu.cn:802/eportal/portal/login?&&user_account=<BID>&&user_password=<PASSWORD>" -UseBasicParsing
-```
-
-*请根据您的账户类型选择正确的URL（参照`curl`中的URL），以上仅为一个例子。*
-
-若需要在PowerShell中创建alias，您可以在`$profile$`加入下列函数（可以通过在PowerShell中键入`$profile$`找到该文件的位置）：
-
-```powershell
-function njupt-login {
-    $response = Invoke-WebRequest -Uri "https://p.njupt.edu.cn:802/eportal/portal/login?&&user_account=<BID>&&user_password=<PASSWORD>" -UseBasicParsing
-    $response.Content
-}
-```
+Windows 11应该已经预装`curl`，但需要你手动指定。将上文中`curl`换为`curl.exe`即可。
 
 *请根据您的账户类型选择正确的URL（参照`curl`中的URL），以上仅为一个例子。*
 
